@@ -56,7 +56,7 @@ I am unsure as to why using the default `GITHUB_TOKEN` provided universally will
 
 You'll need to provide these environment variables to specify exactly what information is needed to build the APK.
 
-* **APP_FOLDER**: full path to the apk folder. Most of the time for release, it's `android/app/build/outputs/apk/release/app-release.apk`, for debug, it's `android/app/build/outputs/apk/debug/app-debug.apk`
+* **APP_FOLDER**: full path to the apk file. Most of the time for release, it's `android/app/build/outputs/apk/release/app-release.apk`, for debug, it's `android/app/build/outputs/apk/debug/app-debug.apk`
 * **RELEASE_TITLE**: title for release
 
 ## Credits
