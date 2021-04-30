@@ -1,9 +1,9 @@
-name: "Debug APK Publisher"
+name: "Create Release with APK"
 branding:
   icon: "package"
   color: "red"
-description: "Build & Publish Debug APK on Github"
-author: "ShaunLWM"
+description: "Build & Publish APK on Github"
+author: "yurakurets"
 inputs:
   GITHUB_TOKEN:
     required: true
@@ -11,6 +11,12 @@ inputs:
   REPO_BRANCH:
     required: false
     description: "Github repository branch name."
+  APP_FOLDER:
+    required: true
+    description: "Apk folder."
+  RELEASE_TITLE:
+    required: true
+    description: "Release title."
 runs:
   using: "docker"
   image: "Dockerfile"
