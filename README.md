@@ -2,7 +2,7 @@
 
 ![screenshot](screenshot.png)
 
-🕷 Build and release debug APK from your Android project
+🕷 Build and release APK from your Android project
 
 ## Warning ⚠
 Add a target branch (eg. master) to build the APK to prevent infinite loop (releasing the APK on the release tag will trigger a rerun of the action).
@@ -13,7 +13,7 @@ To use the action simply add the following lines to your `.github/workflows/andr
 
 #### YML
 ```
-name: Build & Publish Debug APK
+name: Build & Publish Release APK
 
 on:
  push:
@@ -36,10 +36,11 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug
     - name: Releasing using Hub
-      uses: ShaunLWM/action-release-debugapk@master
+      uses: yurakurets/action-release-debugapk@master
       env:
+       REPO_BRANCH: master
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-       APP_FOLDER: app
+       APP_FOLDER: android/app/build/outputs/apk/release/app-release.apk
        RELEASE_TITLE: New Build
 ```
 
@@ -55,7 +56,7 @@ I am unsure as to why using the default `GITHUB_TOKEN` provided universally will
 
 You'll need to provide these environment variables to specify exactly what information is needed to build the APK.
 
-* **APP_FOLDER**: main folder to search for the apk. Most of the time, it's `app`
+* **APP_FOLDER**: full path to the apk folder. Most of the time for release, it's `android/app/build/outputs/apk/release/app-release.apk`, for debug, it's `android/app/build/outputs/apk/debug/app-debug.apk`
 * **RELEASE_TITLE**: title for release
 
 ## Credits
