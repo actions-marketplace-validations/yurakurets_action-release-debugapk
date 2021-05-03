@@ -13,6 +13,9 @@ inputs:
     description: "Github repository branch name."
   APP_FOLDER:
     required: true
+    description: "App folder."
+  APK_FOLDER:
+    required: true
     description: "Apk folder."
   RELEASE_TITLE:
     required: true

@@ -40,7 +40,8 @@ jobs:
       env:
        REPO_BRANCH: master
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-       APP_FOLDER: android/app/build/outputs/apk/release/app-release.apk
+       APK_FOLDER: android/app/build/outputs/apk/release/app-release.apk
+       APP_FOLDER: android/app
        RELEASE_TITLE: New Build
 ```
 
@@ -56,7 +57,8 @@ I am unsure as to why using the default `GITHUB_TOKEN` provided universally will
 
 You'll need to provide these environment variables to specify exactly what information is needed to build the APK.
 
-* **APP_FOLDER**: full path to the apk file. Most of the time for release, it's `android/app/build/outputs/apk/release/app-release.apk`, for debug, it's `android/app/build/outputs/apk/debug/app-debug.apk`
+* **APK_FOLDER**: full path to the apk file. Most of the time for release, it's `android/app/build/outputs/apk/release/app-release.apk`, for debug, it's `android/app/build/outputs/apk/debug/app-debug.apk`
+* **APP_FOLDER**: app folder for getting versionName
 * **RELEASE_TITLE**: title for release
 
 ## Credits
